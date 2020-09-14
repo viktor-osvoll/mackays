@@ -1,0 +1,4 @@
+.template-index {
+    @include content-container();
+    @include side-padding();
+}

@@ -1,0 +1,53 @@
+$button-font-family: $font-family-base;
+
+a.link-btn {
+
+	margin: 5px 0;
+	padding: 10px 30px;
+	background-color: $a-color-base;
+	color: $color-white;
+	font-size: 1rem;
+	font-family: $button-font-family;
+	font-weight: $font-weight-bold;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background-color $animation-duration-base $animation-timing-base;
+
+	&:focus {
+		background-color: $a-color-base;
+	}
+	&:visited {
+		background-color: $a-color-visited;
+	}
+	&:hover {
+		background-color: $a-color-hover;
+	}
+	&:active {
+		background-color: $a-color-active;
+	}
+
+	&:disabled {
+
+		&:hover {
+			cursor: not-allowed;
+		}
+	}
+
+	&.btn-default {
+		background-color: $a-color-base;
+		color: $color-white;
+
+		&:focus {
+			background-color: $a-color-base;
+		}
+		&:visited {
+			background-color: $a-color-visited;
+		}
+		&:hover {
+			background-color: $a-color-hover;
+		}
+		&:active {
+			background-color: $a-color-active;
+		}
+	}
+}

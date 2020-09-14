@@ -1,0 +1,4 @@
+.template-archive {
+    @include content-container();
+    @include side-padding();
+}

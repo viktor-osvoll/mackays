@@ -1,0 +1,26 @@
+{
+  "name": "idkommunikation/gutenberg-starter-theme",
+  "description": "ID Kommunikation WordPress Starter Theme",
+  "keywords": ["wordpress", "idkommunikation", "theme"],
+  "homepage": "https://idkommunikation.com",
+  "version": "0.1",
+  "type": "wordpress-theme",
+  "repositories": [
+  ],
+  "config": {
+    "secure-http": false
+  },
+  "require": {
+    "php": ">=5.6",
+    "timber/timber": "^1.5"
+  },
+  "require-dev": {},
+  "scripts": {
+    "post-install-cmd": [
+      "npm install"
+    ],
+    "post-update-cmd": [
+      "npm update"
+    ]
+  }
+}

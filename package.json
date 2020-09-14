@@ -1,0 +1,63 @@
+{
+	"name": "id-starter-theme",
+	"title": "ID Kommunikation WordPress Starter Theme",
+	"description": "",
+	"version": "1.1.0",
+	"license": "UNLICENSED",
+	"homepage": "https://idkommunikation.com/",
+	"author": {
+		"name": "ID Kommunikation",
+		"email": "info@idkommunikation.com",
+		"url": "https://idkommunikation.com/"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack --mode=production",
+		"start": "webpack --watch --mode=development"
+	},
+	"repository": {
+		"private": true
+	},
+	"devDependencies": {
+		"@babel/core": "^7.8.0",
+		"@babel/preset-env": "^7.8.2",
+		"autoprefixer": "^9.7.3",
+		"babel-loader": "^8.0.4",
+		"babel-preset-env": "^1.7.0",
+		"bourbon": "^4.2.7",
+		"bourbon-bitters": "^1.2.1",
+		"bourbon-neat": "^1.8.0",
+		"browser-sync": "^2.26.3",
+		"browser-sync-webpack-plugin": "^2.2.2",
+		"css-loader": "^1.0.0",
+		"cssnano": "^4.1.10",
+		"extract-text-webpack-plugin": "^4.0.0-beta.0",
+		"file-loader": "^2.0.0",
+		"jquery": "^3.3.1",
+		"mini-css-extract-plugin": "^0.9.0",
+		"node-sass": "^4.9.4",
+		"postcss-loader": "^3.0.0",
+		"sass-loader": "^7.1.0",
+		"style-loader": "^0.23.1",
+		"uglifyjs-webpack-plugin": "^2.0.1",
+		"vue": "^2.5.17",
+		"webpack": "^4.41.6",
+		"webpack-cli": "^3.3.11",
+		"webpack-shell-plugin": "^0.5.0"
+	},
+	"dependencies": {
+		"lodash": "^4.17.15"
+	},
+	"keywords": [],
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {},
+			"cssnano": {}
+		}
+	},
+	"browserslist": [
+		"last 2 version",
+		"not dead",
+		"iOS >= 9"
+	]
+}

@@ -1,0 +1,25 @@
+#site-header {
+    position: relative;
+    z-index: 5;
+
+    .wrapper {
+        @include content-container();
+        @include side-padding();
+
+        background: $background-color-header;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        @include media($small-screen) {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+    }
+
+    &.full-width {
+        background: $background-color-header;
+
+        .wrapper {
+            background: transparent;
+        }
+    }
+}

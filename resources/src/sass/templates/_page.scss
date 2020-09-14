@@ -1,0 +1,26 @@
+.template-page {
+
+    .article-body > * {
+        //@include content-container();
+    }
+
+    .article-title,
+    .article-body > .wp-block-idkomm-layout-container {
+        @include content-container();
+        @include side-padding();
+    }
+
+    .article-body {
+
+        .alignwide {
+            max-width: $width-site + 200px;
+        }
+
+        .alignfull {
+            margin-left  : calc( -100vw / 2 + 100% / 2 );
+            margin-right : calc( -100vw / 2 + 100% / 2 );
+            max-width    : 100vw;
+        }
+    }
+
+}

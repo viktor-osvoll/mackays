@@ -1,0 +1,6 @@
+{% set href   = link.url    ?: '#0' %}
+{% set title  = link.title  ?: '' %}
+{% set target = link.target ?: '_self' %}
+{% set color  = link.color  ?: 'btn-default' %}
+
+<a class="link-btn {{ color }}" role="button" target="{{ target }}" href="{{ href }}">{{ title }}</a>

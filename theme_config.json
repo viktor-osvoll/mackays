@@ -1,0 +1,193 @@
+{
+	"colours": {
+		"BasicColours": {
+			"color-white": {"name": "White", "colour": "white"},
+			"color-whitesmoke": {"name": "White Smoke", "colour": "whitesmoke"},
+			"color-lightgray": {"name": "Light Gray", "colour": "lightgray"},
+			"color-gray": {"name": "Gray", "colour": "gray"},
+			"color-black":{"name": "Black", "colour": "black"},
+			"color-blue": {"name": "Blue", "colour": "blue"},
+			"color-red": {"name": "Red", "colour": "red"},
+			"color-yellow": {"name": "Yellow", "colour": "yellow"},
+			"color-green": {"name": "Green", "colour": "green"},
+			"color-purple": {"name": "Purple", "colour": "purple"},
+			"color-orange": {"name": "Orange", "colour": "orange"},
+			"color-pink": {"name": "Pink", "colour": "pink"},
+			"color-cyan": {"name": "Cyan", "colour": "cyan"}
+		},
+		"ThemeColours": {
+			"color-theme-white": {"name": "White", "colour": "white"},
+			"color-theme-black": {"name": "Black", "colour": "black"},
+			"color-theme-gray": {"name": "Gray", "colour": "gray"}
+		},
+		"FontColours": {
+			"font-color-base": {"name": "Font colour", "colour": "black"}
+		},
+		"LinkColours": {
+			"a-color-base": {"name": "Link colour", "colour": "#0000FF"},
+			"a-color-hover": {"name": "Link hover", "colour": "#191970"},
+			"a-color-visited": {"name": "Link visited", "colour": "#800080"},
+			"a-color-active": {"name": "Link active", "colour": "#FF0000"}
+		},
+		"BackgroundColors": {
+			"background-color-header": {"name": "Header background", "colour": "gray"},
+			"background-color-content": {"name": "Content background", "colour": "whitesmoke"},
+			"background-color-footer": {"name": "Footer background", "colour": "gray"}
+		},
+		"EditorColourPalette": {
+			"dusty": {"name": "Dusty", "colour": "#96858F"},
+			"lavender": {"name": "Lavender", "colour": "#6D7993"},
+			"overcast": {"name": "Overcast", "colour": "#9099A2"},
+			"paper": {"name": "Paper", "colour": "#D5D5D5"},
+			"yellow": {"name": "Yellow", "colour": "#FFFF00"},
+			"mauve": {"name": "Mauve", "colour": "#AA00FF"},
+			"puke": {"name": "Puke", "colour": "#55FF00"}
+		}
+	},
+	"customizer": {
+		"removeSections": [
+			"themes",
+			"title_tagline",
+			"colors",
+			"header_image",
+			"background_image",
+			"nav",
+			"nav_menus",
+			"static_front_page",
+			"custom_css",
+			"widgets"
+		],
+		"addSections": [
+			{"slug": "contact_info", "title": "Contact information", "priority": "20"},
+			{"slug": "footer_settings", "title": "Footer Settings", "priority": "40"},
+			{"slug": "google_settings", "title": "Google Account settings", "priority": "30"}
+		],
+		"addControls": [
+			{
+				"slug": "contact_info_address",
+				"label": "Company Address",
+				"section": "contact_info",
+				"description": "A physical address",
+				"type": "textarea",
+				"default": "",
+				"priority": 2,
+				"sanitize_callback": "wp_kses_post",
+				"live_preview": "postMessage",
+				"selector": ".contact-info-address",
+				"attribute": "html",
+				"attribute_type": "",
+				"translatable": true
+			},
+			{
+				"slug": "google_tag_manager_code",
+				"label": "Google Tag Manager Code",
+				"section": "google_settings",
+				"description": "The code should only be of the format GTM-XXXX.",
+				"type": "text",
+				"default": "GTM-XXXX",
+				"priority": 2,
+				"sanitize_callback": "",
+				"live_preview": "refresh",
+				"selector": "",
+				"attribute": "",
+				"attribute_type": "",
+				"translatable": false
+			},
+			{
+				"slug": "google_maps_api_key",
+				"label": "Google Maps API Key",
+				"section": "google_settings",
+				"description": "You need one of these with billing enabled",
+				"type": "text",
+				"default": "NNNNNNNNNNNNNNNN",
+				"priority": 3,
+				"sanitize_callback": "",
+				"live_preview": "refresh",
+				"selector": "",
+				"attribute": "",
+				"attribute_type": "",
+				"translatable": false
+			},
+			{
+				"slug": "selector",
+				"label": "Select box",
+				"section": "contact_info",
+				"description": "has choices",
+				"type": "select",
+				"choices": { "A": "A", "B": "B", "C": "C" },
+				"default": "B",
+				"priority": 3,
+				"sanitize_callback": "",
+				"live_preview": "postMessage",
+				"selector": ".contact-info-selector",
+				"attribute": "html",
+				"attribute_type": "",
+				"translatable": false
+			},
+			{
+				"slug": "footer_text_colour",
+				"label": "Text colour",
+				"section": "footer_settings",
+				"description": "Pick a colour, any colour",
+				"type": "WP_Customize_Color_Control",
+				"choices": "",
+				"default": "#FFFFFF",
+				"priority": 4,
+				"sanitize_callback": "",
+				"live_preview": "postMessage",
+				"selector": "#site-footer",
+				"attribute": "css",
+				"attribute_type": "color",
+				"translatable": false
+			},
+			{
+				"slug": "footer_background_colour",
+				"label": "Background colour",
+				"section": "footer_settings",
+				"description": "Pick a colour, any colour",
+				"type": "WP_Customize_Color_Control",
+				"choices": "",
+				"default": "#000000",
+				"priority": 5,
+				"sanitize_callback": "",
+				"live_preview": "postMessage",
+				"selector": "#site-footer",
+				"attribute": "css",
+				"attribute_type": "background-color",
+				"translatable": false
+			},
+			{
+				"slug": "footer_image",
+				"label": "Image",
+				"section": "footer_settings",
+				"description": "Pick an image",
+				"type": "WP_Customize_Image_Control",
+				"choices": "",
+				"default": "",
+				"priority": 6,
+				"sanitize_callback": "",
+				"live_preview": "postMessage",
+				"selector": "#site-footer",
+				"attribute": "",
+				"attribute_type": "",
+				"translatable": false
+			},
+			{
+				"slug": "footer_attachment",
+				"label": "Attachment",
+				"section": "footer_settings",
+				"description": "Pick a file",
+				"type": "WP_Customize_Upload_Control",
+				"choices": "",
+				"default": "",
+				"priority": 7,
+				"sanitize_callback": "",
+				"live_preview": "postMessage",
+				"selector": "#site-footer",
+				"attribute": "",
+				"attribute_type": "",
+				"translatable": false
+			}
+		]
+	}
+}
