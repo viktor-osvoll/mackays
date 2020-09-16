@@ -1,0 +1,25 @@
+{% block products %}
+
+<div class="container">
+<h2 class="product-headline">Products</h2>
+        <div class="row">
+                
+            {% for post in products %}
+               
+                {# {% for product in post.meta('product_ingredients') %}
+                    <p>{{ product.ingredient }}</p>
+                {% endfor %} #}
+                <a href="{{ post.link }}"> <div class="col-lg-4 col-md-6 col-sm-12 product-content">
+                  {% if (post.product_image) %}
+                  <img src="{{ Image(post.product_image) }}" class="product-image">
+                       {% endif %}
+                    <h1 class="product-title">{{ post.product_title }}</h1>
+                    <p class)"product-body">{{ post.product_excerpt }}</p>
+                </div></a>
+            {% endfor %}                     
+
+        
+
+        </div>
+    </div>
+{% endblock %}

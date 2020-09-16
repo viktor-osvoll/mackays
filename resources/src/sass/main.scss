@@ -1,29 +1,5 @@
-/** Setup **/
-@import "../../../node_modules/bourbon/app/assets/stylesheets/bourbon";
-@import "base/bitters";
-@import "colours";
-@import "variables";
-@import "typography";
-@import "mixins";
-@import "base";
-
-/** Partials **/
-@import "templates/partials/elements/button-link";
-
-/** Layout **/
-@import "templates/layout/base";
-@import "templates/layout/header";
-@import "templates/layout/footer";
-
-/** Navigation **/
-@import "templates/navigation/primary";
-
-/** Templates **/
-@import "templates/index";
-@import "templates/home";
-@import "templates/page";
-@import "templates/single";
-@import "templates/archive";
-@import "templates/search";
-@import "templates/404";
-@import "templates/kitchen-sink";
+@import "layout/header";
+@import "layout/body";
+@import "layout/slider";
+@import "layout/recipe";
+@import "layout/products";

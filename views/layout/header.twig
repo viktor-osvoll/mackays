@@ -1,8 +1,9 @@
 <div class="wrapper">
-    <h1 class="hdr-logo" role="banner">
-        <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-    </h1>
     <nav id="nav-main" class="nav-main" role="navigation">
-        {% include "navigation/primary.twig" with {'menu': menu.get_items} %}
+        {% for field in fields.flexible_content %}
+            {% if (field.header_image) %}
+             <img src="{{ Image(field.header_image) }} " class="header-hero">
+             {% endif %}
+        {% endfor %}
     </nav><!-- #nav-main -->
 </div>

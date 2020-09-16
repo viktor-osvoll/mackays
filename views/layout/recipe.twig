@@ -1,0 +1,45 @@
+{% block recipe %}
+    <div class="container">
+    
+        <h2 class="recipe-headline">Recipes</h2>
+               
+             <div class="row">
+      
+            {% for post in recipes %}
+        
+                {# {% for recipe in post.meta('recipe_ingredients') %}
+                    <p>{{ recipe.ingredient }}</p>
+                {% endfor %} #}
+                 <a href="{{ post.link }}"><div class="col-lg-4 col-md-6 col-sm-12 recipe-content">
+                  {% if (post.recipe_image) %}
+                  <img src="{{ Image(post.recipe_image) }}" class="recipe-image">
+                       {% endif %}
+                    <h1 class="recipe-title">{{ post.recipe_title }}</h1>
+                    <p class)"recipe-body">{{ post.recipe_excerpt }}</p>
+                </div>
+                </a>
+            {% endfor %}                     
+
+        
+
+        </div>
+    </div>
+
+       
+
+
+      {#   {% for post in recipes %}
+          
+            <div>
+            {% for recipe in bajs %}
+            <p>hej</p>
+            {% if (recipe.ingredient) %}
+                
+                {% endif %}
+            {% endfor %}
+            
+            </div>
+           
+        {% endfor %} #}
+
+{% endblock %}

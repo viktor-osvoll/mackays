@@ -1,19 +1,70 @@
 {% extends "layout/base.twig" %}
 
 {% block content %}
-    <div class="template-single">
-        <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-            <img src="{{ post.thumbnail.src|resize(1200, 300) }}">
-            <section class="article-content">
-                <h1 class="article-h1">{{ post.title }}</h1>
-                <a href="{{ post.link }}">{{ _e('edit') }}</a>
-                <p class="blog-author">
-                    <span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.date }}
-                </p>
-                <div class="article-body">
-                    {{post.content}}
-                </div>
-            </section>
-        </article>
-    </div>
+
+    {% block product %}
+        {% for product in products %}
+           {% if (product.id == post.id ) %} 
+                <img src="{{ Image(product.product_image) }}" class="product-image">
+                <h1>{{product.product_title}}</h1>
+                <p>{{ product.product_excerpt }}</p>
+                <p>{{ product.product_info }}</p>
+                 {% for ingredient in post.meta('product_ingredients') %}
+                    <li>{{ ingredient.ingredient }}</li>
+                {% endfor %}
+                <p>{{ product.product_size }}</p> 
+                <p>{{ product.product_origin }}</p>
+
+
+
+
+            {% endif %} 
+        {% endfor %}
+
+    {% endblock %}
+
+    
+
+    {% block recipe %}
+    
+        {% for recipe in recipes %}
+           {% if (recipe.id == post.id ) %} 
+            
+                <img src="{{ Image(recipe.recipe_image) }}" class="recipe-image">
+                <h1>{{recipe.recipe_title}}</h1>
+                <p>{{ recipe.recipe_excerpt }}</p>
+                <p>{{ recipe.recipe_time }}</p>
+                <p>{{ recipe.recipe_portions }}</p>
+               <ul>
+               
+                {% for ingredient in post.meta('recipe_ingredients') %}
+                    <li>{{ ingredient.ingredient }}</li>
+                {% endfor %}
+                </ul>
+                <ul>
+                {% for instruction in post.meta('recipe_instructions') %}
+                    <li>{{ instruction.instruction }}</li>
+                {% endfor %}
+                </ul>
+                <p>{{ recipe.recipe_serve }}</p>
+
+
+                
+            {% endif %} 
+        {% endfor %}
+
+
+    {% endblock %}
+
+{% endblock %} 
+{% block header %}
 {% endblock %}
+{% block slider %}
+{% endblock %}
+{% block products %}
+{% endblock %}
+{% block recipes %}
+{% endblock %}
+
+
+
