@@ -6,6 +6,7 @@
         {% for product in products %}
            {% if (product.id == post.id ) %} 
                 <img src="{{ Image(product.product_image) }}" class="product-image">
+                
                 <h1>{{product.product_title}}</h1>
                 <p>{{ product.product_excerpt }}</p>
                 <p>{{ product.product_info }}</p>
@@ -31,6 +32,8 @@
            {% if (recipe.id == post.id ) %} 
             
                 <img src="{{ Image(recipe.recipe_image) }}" class="recipe-image">
+                <img src="{{ Image(recipe.recipe_product_image) }}" class="recipe-image">
+
                 <h1>{{recipe.recipe_title}}</h1>
                 <p>{{ recipe.recipe_excerpt }}</p>
                 <p>{{ recipe.recipe_time }}</p>
@@ -48,10 +51,29 @@
                 </ul>
                 <p>{{ recipe.recipe_serve }}</p>
 
+                {# {{dump(post.single_title)}} #}
+
+               {% for section in post.get_field('flexible_single') %}
+                   
+                        <h2> {{ section.single_title}} </h2>
+
+                        <ul>
+                {% for ingredients in section.single_repeater %}
+                    <li>{{ ingredients.ingredient }}</li>
+                {% endfor %}
+                        </ul>
+
+                        <h4> {{section.single_instructions}} </h4>
+
+                 {% endfor %}
+    
+
 
                 
             {% endif %} 
         {% endfor %}
+
+    
 
 
     {% endblock %}

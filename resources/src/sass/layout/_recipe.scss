@@ -1,6 +1,15 @@
 .recipe-image{
-   width: 20vw;
+   width: 100%;
 }
+
+.recipe-block{
+    overflow-x: hidden;
+    width: 90%;
+    margin-left: 5%;
+   /*  margin-left: 5%; */
+}
+
+
 
 .recipe-headline{
     text-align: center;
