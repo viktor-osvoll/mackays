@@ -2,8 +2,15 @@
     <nav id="nav-main" class="nav-main" role="navigation">
         {% for field in fields.flexible_content %}
             {% if (field.header_image) %}
-             <img src="{{ Image(field.header_image) }} " class="header-hero">
+            <div class="header-icons">
+                <i class="fas fa-bars hamburger-menu"></i>
+                <a href="{{ field.facebook_link }}" class="fa fa-facebook-square facebook" aria-hidden="true"></a>
+                <a href="{{ field.instagram_link }}" class="fab fa-instagram instagram" aria-hidden="true"></a>
+            </div>
+            <img src="{{ Image(field.header_image) }} " class="header-hero">
              {% endif %}
         {% endfor %}
+
+         
     </nav><!-- #nav-main -->
 </div>

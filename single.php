@@ -5,6 +5,7 @@ $post = Timber::query_post();
 $context['post'] = $post;
 $context['product'] = get_field($post->ID);
 $context['recipe'] = get_field($post->ID);
+$context['fields'] = get_fields(10);
 
 
 // recipe connection

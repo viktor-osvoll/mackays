@@ -1,23 +1,21 @@
 {% block recipe %}
     <div class="recipe-block">
     
-        <h2 class="recipe-headline">Recipes</h2>
+        <h2 class="recipe-headline">RECEPT</h2>
                
              <div class="row">
       
             {% for post in recipes %}
         
-                {# {% for recipe in post.meta('recipe_ingredients') %}
-                    <p>{{ recipe.ingredient }}</p>
-                {% endfor %} #}
-
                 <div class="col-lg-4 col-md-6 col-sm-12 recipe-content">
-                    <a href="{{ post.link }}">
+                    <a class="recipe-link" href="{{ post.link }}">
                         {% if (post.recipe_image) %}
                             <img src="{{ Image(post.recipe_image) }}" class="recipe-image">
                         {% endif %}
-                        <h1 class="recipe-title">{{ post.recipe_title }}</h1>
-                        <p class)"recipe-body">{{ post.recipe_excerpt }}</p>
+                        <div class="recipe-text-content">
+                            <h1 class="recipe-title">{{ post.recipe_title }}</h1>
+                            <p class)"recipe-body">{{ post.recipe_excerpt }}</p>
+                        </div>
                     </a>
                 </div>
                 

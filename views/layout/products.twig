@@ -1,22 +1,39 @@
 {% block products %}
 
 <div class="product-block">
-    <h2 class="product-headline">Products</h2>
+    <h2 class="product-headline">PRODUKTER</h2>
         <div class="row">
                 
             {% for post in products %}
                
-                {# {% for product in post.meta('product_ingredients') %}
-                    <p>{{ product.ingredient }}</p>
-                {% endfor %} #}
                 <div class="col-lg-4 col-md-6 col-sm-12 product-content">
-                    <a href="{{ post.link }}">
+                   {#  <a href="{{ post.link }}" class="product-link"> #}
                         {% if (post.product_image) %}
                             <img src="{{ Image(post.product_image) }}" class="product-image">
                         {% endif %}
-                        <h1 class="product-title">{{ post.product_title }}</h1>
-                        <p class="product-body">{{ post.product_excerpt }}</p>
-                    </a>
+                        <div class="product-text-content">
+                            <h1 class="product-title"><b>{{ post.product_title }}</b></h1>
+                             {# </a> #}
+
+
+<a class="collapsed product-collapse" data-toggle="collapse" href="#collapseExample{{post.id}}" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-plus-circle fa-3x"></i></a>
+
+  
+<div class="collapse" id="collapseExample{{post.id}}">
+  <div class="collapse-info">
+    <p class="collapse-p"><span class="collapse-hard">Tillverkningsland:</span><span class="span-acf"> {{ post.product_origin }}</span></p>
+    <p class="collapse-p"><span class="collapse-hard">Förpackningsstorlek:</span><span class="span-acf"> {{ post.product_size }}</span></p>
+    <p class="collapse-p"><span class="collapse-hard">Ingredienser:</span>
+        {# {% for ingredient in post.meta('product_ingredients') %} #}
+           <span class="collapse-ingredients">{{ post.product_ingredients }}</span>
+        {# {% endfor %} #}
+    </p>
+  </div>
+</div>
+
+                            
+                        </div>
+                   
                 </div>
             {% endfor %}                     
 
@@ -25,3 +42,10 @@
         </div>
 </div>
 {% endblock %}
+
+<script>
+   $('.product-collapse').click(function(){
+    $(this).find('i').toggleClass(' fa-3x fas fa-plus-circle fas fa-3x fa-minus-circle')
+});
+
+</script>

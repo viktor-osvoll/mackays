@@ -87,7 +87,7 @@
             "key": "field_5f620c3cc0ae2",
             "label": "Product Ingredients",
             "name": "product_ingredients",
-            "type": "repeater",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -96,32 +96,11 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_5f620dd7cbf56",
-                    "label": "Ingredient",
-                    "name": "ingredient",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_5f620c5ac0ae3",
@@ -179,5 +158,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600142340
+    "modified": 1600222699
 }

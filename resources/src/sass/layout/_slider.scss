@@ -4,5 +4,24 @@
 
 .slider-item{
     height: 100vh;
-    border-bottom: 10px solid #C5B358;
+    border-bottom: 15px solid #A88A4F;
 }
+
+.slider-text{
+    
+    
+}
+
+@media only screen and (max-width: 500px) {
+    .slider-container{
+        height: 35vh;
+    }
+
+    .slider-item{
+        height: 35vh;
+        border-bottom: 10px solid #A88A4F;
+
+    }
+
+    
+  }

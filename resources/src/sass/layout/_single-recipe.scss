@@ -1,0 +1,114 @@
+
+@media screen and (max-width: 500px){
+
+
+
+// image styling
+.image-wrapper{
+    width: 100%;
+    background-color: aquamarine;
+    text-align: center;
+   
+} 
+.single-recipe-image{
+   width: 50%;
+  
+}
+
+// intro styling
+
+.recipe-single-title{
+    margin-top: 10%;
+    font-size: 3em;
+    font-family:italic;
+    text-align: center;
+    color: darkgreen;
+}
+
+
+
+.recipe-time-portion{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    color: gray;
+}
+.recipe-single-time{
+    margin-right: 20%;
+}
+
+
+// step styling
+
+.step-title{
+    margin-top: 10%;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    font-size: 3em;
+    font-family:italic;
+    color: darkgreen;
+}
+
+.step-ingredients-wrapper{
+    width: 75%;
+    max-height: 50%;
+    
+}
+
+.step-instructions{
+    width: 75%;
+   
+    word-spacing: 3px;
+}
+}
+
+body{
+    background-image: url("tartan1337.png");
+    background-repeat: repeat;
+   
+}
+
+.image-wrapper{
+    width: 100vw;
+   height: 100vh;
+
+}
+.single-recipe-image{
+
+    height: 60vh;
+}
+
+.recipe-product-image{
+    width: 50%;
+    
+}
+
+
+.recipe-single-title{
+    color: #0A553D;
+    font-family: italic;
+    text-align: center;
+    margin: 2%;
+}
+
+
+.step-title{
+    color: #0A553D;
+    font-family: italic;
+    margin-bottom: 2%;
+
+}
+
+
+.step-ingredients-wrapper{
+    line-height: 3px;
+    margin-bottom: 5%;
+}
+
+
+.recipe-time-portion{
+    display: flex;
+    justify-content: center;
+    
+    color: gray;
+}

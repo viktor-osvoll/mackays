@@ -16,57 +16,56 @@
                 <p>{{ product.product_size }}</p> 
                 <p>{{ product.product_origin }}</p>
 
-
-
-
             {% endif %} 
         {% endfor %}
 
     {% endblock %}
 
-    
-
     {% block recipe %}
     
         {% for recipe in recipes %}
            {% if (recipe.id == post.id ) %} 
+                <h1 class="recipe-single-title">{{recipe.recipe_title}}</h1>
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="image-wrapper col-lg-6 order-sm-12 ">
+                            <img src="{{ Image(recipe.recipe_image) }}" class="single-recipe-image">
+                            <img src="{{ Image(recipe.recipe_product_image) }}" class="recipe-product-image">
+
+                        </div>
+                        
+                            
+
+                        <div class="col-lg-6 order-sm-1">
+                            
+
+                            <div class="recipe-time-portion">
+                                <p class="recipe-single-time">{{ recipe.recipe_time }}</p>
+                                <p class="recipe-single-portions">{{ recipe.recipe_portions }} Portions</p>
+                            </div>
+
+                            {% for section in post.get_field('flexible_single') %}
+                            
+                                <h2 class="step-title"> {{ section.single_title}} </h2>
+
+                                <div class="step-ingredients-wrapper">
+                                    {% for ingredients in section.single_repeater %}
+                                        <p class="step-ingredient">{{ ingredients.ingredient }}</p>
+                                    {% endfor %}
+                                </div>
+
+                                <p class="step-instructions"> {{section.single_instructions}} </p>
+
+                            {% endfor %}
             
-                <img src="{{ Image(recipe.recipe_image) }}" class="recipe-image">
-                <img src="{{ Image(recipe.recipe_product_image) }}" class="recipe-image">
+                            <p class="recipe-serve">{{ recipe.recipe_serve }}</p>
 
-                <h1>{{recipe.recipe_title}}</h1>
-                <p>{{ recipe.recipe_excerpt }}</p>
-                <p>{{ recipe.recipe_time }}</p>
-                <p>{{ recipe.recipe_portions }}</p>
-               <ul>
-               
-                {% for ingredient in post.meta('recipe_ingredients') %}
-                    <li>{{ ingredient.ingredient }}</li>
-                {% endfor %}
-                </ul>
-                <ul>
-                {% for instruction in post.meta('recipe_instructions') %}
-                    <li>{{ instruction.instruction }}</li>
-                {% endfor %}
-                </ul>
-                <p>{{ recipe.recipe_serve }}</p>
+                        </div>
 
-                {# {{dump(post.single_title)}} #}
-
-               {% for section in post.get_field('flexible_single') %}
-                   
-                        <h2> {{ section.single_title}} </h2>
-
-                        <ul>
-                {% for ingredients in section.single_repeater %}
-                    <li>{{ ingredients.ingredient }}</li>
-                {% endfor %}
-                        </ul>
-
-                        <h4> {{section.single_instructions}} </h4>
-
-                 {% endfor %}
-    
+                        
+                    </div>
+                </div>
 
 
                 
@@ -79,14 +78,14 @@
     {% endblock %}
 
 {% endblock %} 
-{% block header %}
-{% endblock %}
+
 {% block slider %}
 {% endblock %}
 {% block products %}
 {% endblock %}
 {% block recipes %}
 {% endblock %}
-
+{% block about %}
+{% endblock %}
 
 
