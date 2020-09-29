@@ -6,14 +6,23 @@
 // image styling
 .image-wrapper{
     width: 100%;
-    background-color: aquamarine;
-    text-align: center;
+    height: 50%;
+    
+
    
 } 
-.single-recipe-image{
-   width: 50%;
+.recipe-image{
+   width: 100%;
+   
   
 }
+
+.recipe-product-image{
+    width: 20%;
+    height: 33%;
+}
+
+
 
 // intro styling
 
@@ -50,16 +59,26 @@
 }
 
 .step-ingredients-wrapper{
-    width: 75%;
-    max-height: 50%;
+    width: 100%;
+    font-size: 1.4em;
+    line-height: 15px !important;
+
     
 }
 
 .step-instructions{
-    width: 75%;
-   
-    word-spacing: 3px;
+    width: 100%;
+    font-size: 1.4em;
+
 }
+
+
+
+
+// 
+
+
+
 }
 
 body{
@@ -73,7 +92,7 @@ body{
    height: 100vh;
 
 }
-.single-recipe-image{
+.recipe-image{
 
     height: 60vh;
 }
@@ -103,8 +122,14 @@ body{
 .step-ingredients-wrapper{
     line-height: 3px;
     margin-bottom: 5%;
+    font-family:italic;
+
 }
 
+.step-instructions{
+    font-family:italic;
+
+}
 
 .recipe-time-portion{
     display: flex;
@@ -112,3 +137,4 @@ body{
     
     color: gray;
 }
+

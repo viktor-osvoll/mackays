@@ -1,6 +1,6 @@
 .recipe-image{
+   max-height: 50%;
    width: 100%;
-   max-height: 60%;
 }
 
 .recipe-block{
@@ -11,8 +11,9 @@
 }
 
 .recipe-content{
-    margin-bottom: -10%;
     overflow: hidden;
+    margin-bottom: -10%;
+
 }
 
 .recipe-link{
@@ -31,18 +32,84 @@
     text-align: center;
     font-size: 5em;
     color: #004737;
-    font-family: italic;
+    margin: 2% 0% 2% 0%;
 }
 
 .recipe-title{
     text-align: center;
-     font-family: italic;
      text-transform: uppercase;
 }
 
 .recipe-body{
-    font-size: 25px;
+    font-size: 20px;
+    width: 100%;
     color: rgb(88, 85, 85);
+}
+
+.button-more{
+    width: 100%;
+    text-align: center;
+}
+
+/* Pagnation */
+
+.gallery{
+	width: 85%;
+    margin-left: 7.5%;
+	float: left;
+}
+
+.gallery .gallery-items .item.hide{
+	display: none;
+}
+.gallery .gallery-items .item.show{
+	animation: show .5s ease;
+}
+@keyframes show{
+    0%{
+    	opacity:0;
+    	transform: scale(0.9);
+    }
+    100%{
+    	opacity:1;
+    	transform: scale(1);
+    }
+}
+
+.pagination{
+    width: 20%;
+    position: relative;
+	margin: auto;
+    margin-top: -5%;
+    margin-bottom: 5%;
+}
+.gallery .pagination div{
+	margin: 10px;
+    
+}
+.gallery .pagination .page{
+	color: #0a533d;
+    
+}
+.gallery .pagination .prev,.gallery .pagination .next{
+ font-size:15px;
+ padding: 15px 30px;
+ cursor: pointer;
+ color: white;
+}
+
+.gallery .pagination .prev.disabled,
+.gallery .pagination .next.disabled{
+	color: gray;
+	pointer-events: none;
+}
+
+.pag-buttons{
+    background-color: #0a533d;
+}
+
+.page-num{
+    font-size: 35px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -50,4 +117,28 @@
         font-size: 50px;
         
     }
+
+    .recipe-body{
+        font-size: 20px;
+        width: 90%;
+        margin-left: 5%;
+        color: rgb(88, 85, 85);
+    }
+
+    .gallery .pagination .prev,.gallery .pagination{
+            justify-content: center;
+            
+       }
+
+       .recipe-content{
+        
+        margin-bottom: -20%;
+    
+    }
+
+    .pagination{
+       
+        margin-bottom: 20%;
+    }
+
 }

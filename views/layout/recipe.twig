@@ -1,5 +1,5 @@
 {% block recipe %}
-    <div class="recipe-block">
+   {#  <div class="recipe-block">
     
         <h2 class="recipe-headline">RECEPT</h2>
                
@@ -14,33 +14,124 @@
                         {% endif %}
                         <div class="recipe-text-content">
                             <h1 class="recipe-title">{{ post.recipe_title }}</h1>
-                            <p class)"recipe-body">{{ post.recipe_excerpt }}</p>
+                            <p class="recipe-body">{{ post.recipe_excerpt }}</p>
                         </div>
                     </a>
                 </div>
                 
-            {% endfor %}                     
-
-        
+            {% endfor %} 
 
         </div>
     </div>
 
-       
+    <a href="#">
+        <div class="button-more">
+            <button class="more-recipes-button">Fler Recept</button>
+        </div>
+     </a> #}
 
 
-      {#   {% for post in recipes %}
-          
-            <div>
-            {% for recipe in bajs %}
-            <p>hej</p>
-            {% if (recipe.ingredient) %}
-                
-                {% endif %}
-            {% endfor %}
-            
-            </div>
-           
-        {% endfor %} #}
+
+<section class="gallery">
+
+  
+    <h2 class="recipe-headline" style="font-family:Clarendon;">RECEPT</h2>
+
+		<div class="gallery-items row">
+         
+{% for post in recipes %}
+			<div class="item col-lg-4 col-md-6 col-sm-12 recipe-content">
+              <a class="recipe-link" href="{{ post.link }}">
+				{#  {% if (post.recipe_image) %} #}
+                            <img src="{{ Image(post.recipe_image) }}" class="recipe-image">
+                     {#    {% endif %} #}
+				<div class="recipe-content">
+					 <h1 class="recipe-title">{{ post.recipe_title }}</h1>
+                      <p class="recipe-body">{{ post.recipe_excerpt }}</p>
+				</div>
+                </a>
+			</div>
+{% endfor %}
+
+
+		</div>
+		<div class="pagination">
+			<div class="prev pag-buttons">Prev</div>
+			<div class="page"><span class="page-num"></span></div>
+			<div class="next pag-buttons">Next</div>
+		</div>
+	</div>
+</section>
+
+
+<script>
+ 
+  
+ const galleryItems=document.querySelector(".gallery-items").children;
+ const prev=document.querySelector(".prev");
+ const next=document.querySelector(".next");
+ const page=document.querySelector(".page-num");
+ const maxItem=6;
+ let index=1;
+  
+  const pagination=Math.ceil(galleryItems.length/maxItem);
+  console.log(pagination)
+
+  prev.addEventListener("click",function(){
+    index--;
+    check();
+    showItems();
+  })
+  next.addEventListener("click",function(){
+  	index++;
+  	check();
+    showItems();  
+  })
+
+  function check(){
+  	 if(index==pagination){
+  	 	next.classList.add("disabled");
+  	 }
+  	 else{
+  	   next.classList.remove("disabled");	
+  	 }
+
+  	 if(index==1){
+  	 	prev.classList.add("disabled");
+  	 }
+  	 else{
+  	   prev.classList.remove("disabled");	
+  	 }
+  }
+
+  function showItems() {
+  	 for(let i=0;i<galleryItems.length; i++){
+  	 	galleryItems[i].classList.remove("show");
+  	 	galleryItems[i].classList.add("hide");
+
+
+  	    if(i>=(index*maxItem)-maxItem && i<index*maxItem){
+  	 	  // if i greater than and equal to (index*maxItem)-maxItem;
+  		  // means  (1*8)-8=0 if index=2 then (2*8)-8=8
+          galleryItems[i].classList.remove("hide");
+          galleryItems[i].classList.add("show");
+  	    }
+  	    page.innerHTML=index;
+  	 }
+
+  	 	
+  }
+
+  window.onload=function(){
+  	showItems();
+  	check();
+  }
+
+</script>
+
+ 
+
+
 
 {% endblock %}
+

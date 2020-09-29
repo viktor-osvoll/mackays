@@ -25,7 +25,7 @@ $args_products = array(
     // Get post type project
     'post_type' => 'products',
     // Get all posts
-    'posts_per_page' => -1,
+    'posts_per_page' => 6,
     // Order by post date
     'orderby' => array(
         'date' => 'ASC'

@@ -1,0 +1,73 @@
+
+<html {{ site.language_attributes }}>
+	<head>
+		<meta charset="{{ site.charset }}" />
+
+		<meta name="description" content="{{ site.description }}">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="author" href="{{ site.theme.link }}/humans.txt" />
+		<link rel="pingback" href="{{ site.pingback_url }}" />
+
+        {{ idkomm_add_GTM()|raw }}
+        {{ idkomm_add_GTM_noscript()|raw }}
+
+		{{ function('wp_head') }}
+
+		{% block head %}
+		{% endblock %}
+<script>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+  location = 'http://example.com/';
+}, false );
+</script>
+	</head>
+
+
+
+
+
+<div class="wrapper">
+    <nav id="nav-main" class="nav-main" role="navigation">
+        {% for field in fields.flexible_content %}
+            {% if (field.header_image) %}
+             <img src="{{ Image(field.header_image) }} " class="header-hero">
+             {% endif %}
+        {% endfor %}
+    </nav><!-- #nav-main -->
+</div>
+<div class="header-image ">
+    <img src="{{ Image(collumn.competition_header_image) }} " class="header-hero">
+
+</div>
+<div class="comp-context">
+
+<h4> {{collumn.title}}</h3>
+<h4>{{collumn.description}}</h3>
+
+</div>
+
+
+<div class="container">
+<div class="row">
+
+<div class="col-lg-6 col-sm-12 order-sm-12 price-image-wrapper " >
+     <img src="{{ Image(collumn.image) }} " >
+</div>
+
+<div class="col-lg-6 col-sm-12 order-sm-1 form-wrapper">
+
+{{ function('do_shortcode', '[contact-form-7 id="82" title="competition"]') }}
+
+</div>
+ 
+
+</div>
+</div>
+

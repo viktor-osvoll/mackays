@@ -2,15 +2,36 @@
     height: 100vh;
 }
 
+.testing{
+    position: relative;
+    z-index: 0;
+}
+
 .slider-item{
     height: 100vh;
     border-bottom: 15px solid #A88A4F;
 }
 
 .slider-text{
-    
-    
+    position: absolute;
+    bottom: 40%;
+    left: 60%;
+    font-size: 70px;
+    z-index: 20;
+    font-family: italic;
 }
+
+.slider-title{
+    color: #A88A4F;
+    font-size: 70px;
+}
+
+.slider-body{
+    color: white;
+    width: 50%;
+}
+
+
 
 @media only screen and (max-width: 500px) {
     .slider-container{
