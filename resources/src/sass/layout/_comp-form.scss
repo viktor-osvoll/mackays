@@ -75,6 +75,10 @@
      
  }
 
+ .comp-container{
+     width: 100%;
+ }
+
 
 
  @media screen and (max-width: 500px){
@@ -136,7 +140,8 @@
     }
     
     .price-image-wrapper img{
-        width: 100%;
+        width: 90%;
+        margin-left: 5%;
         
         
     }

@@ -42,28 +42,29 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         {% endfor %}
     </nav><!-- #nav-main -->
 </div>
+
 <div class="header-image ">
     <img src="{{ Image(collumn.competition_header_image) }} " class="header-hero">
 
 </div>
 <div class="comp-context">
 
-<h4> {{collumn.title}}</h3>
-<h4>{{collumn.description}}</h3>
+<h4> {{collumn.competition_title}}</h3>
+<h4>{{collumn.competition_description}}</h3>
 
 </div>
 
 
-<div class="container">
+<div class="comp-container">
 <div class="row">
 
 <div class="col-lg-6 col-sm-12 order-sm-12 price-image-wrapper " >
-     <img src="{{ Image(collumn.image) }} " >
+     <img src="{{ Image(collumn.competition_image) }} " >
 </div>
 
 <div class="col-lg-6 col-sm-12 order-sm-1 form-wrapper">
 
-{{ function('do_shortcode', '[contact-form-7 id="82" title="competition"]') }}
+{{ function('do_shortcode', '[contact-form-7 id="202" title="Contact form 1"]') }}
 
 </div>
  
